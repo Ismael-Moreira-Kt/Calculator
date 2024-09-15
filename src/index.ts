@@ -24,3 +24,23 @@ function getNumber(question: string): Promise<number> {
         });
     });
 }
+
+
+function getOperation(): Promise<number> {
+    return new Promise((resolve) => {
+        rl.question(
+            'Choose the operation:\n1 - Add\n2 - Subtract\n3 - Multiply\n4 - Divide\n> ',
+            (input) => {
+                const operation = parseInt(input);
+                
+                if ([1, 2, 3, 4].includes(operation)) {
+                    resolve(operation);
+                } else {
+                    console.log('Please choose a valid operation.');
+                    
+                    resolve(getOperation());
+                }
+            }
+        );
+    });
+}
