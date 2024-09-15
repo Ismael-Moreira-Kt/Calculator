@@ -2,10 +2,14 @@
   "name": "calculator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Ismael Moreira"
+  "author": "Ismael Moreira",
+  "dependencies": {
+    "@types/node": "^22.5.5",
+    "typescript": "^5.6.2"
+  }
 }
