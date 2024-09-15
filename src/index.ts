@@ -44,3 +44,35 @@ function getOperation(): Promise<number> {
         );
     });
 }
+
+
+async function runCalculator(): Promise<void> {
+    const num1: number = await getNumber('Enter the first number: ');
+    const num2: number = await getNumber('Enter the second number: ');
+    const operation: number = await getOperation();
+
+    switch (operation) {
+        case 1:
+            console.log(`Addition result: ${Calculator.add(num1, num2)}`);
+            break;
+
+        case 2:
+            console.log(`Subtraction result: ${Calculator.subtract(num1, num2)}`);
+            break;
+        
+        case 3:
+            console.log(`Multiplication result: ${Calculator.multiply(num1, num2)}`);
+            break;
+        
+        case 4:
+            if (num2 !== 0) {
+                console.log(`Division result: ${Calculator.divide(num1, num2)}`);
+            } else {
+                console.log('Cannot divide by zero.');
+            }
+
+            break;
+    }
+
+    rl.close();
+}
