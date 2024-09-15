@@ -76,3 +76,7 @@ async function runCalculator(): Promise<void> {
 
     rl.close();
 }
+
+
+
+runCalculator();
